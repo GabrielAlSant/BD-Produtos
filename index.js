@@ -1,0 +1,28 @@
+var express = require("express");
+var app = express();
+var { produto } = require("./models")
+
+
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}))
+
+app.get("/", async function (req, res){
+    const resultado =  await produto.findAll();
+     res.json(resultado)
+     
+   });
+
+app.post("/", async function (req, res){
+    const resultado =  await produto.create(req.body);
+     res.json(resultado)
+     
+   });
+
+
+
+
+app.listen(3001, function(){
+  console.log("O servidor esta em killing spree B)")
+});
