@@ -20,6 +20,10 @@ app.post("/", async function (req, res){
      res.json(resultado)
      
    });
+   app.put("/:id", function (req, res){
+    var resultado =  produto.update(req.body, {where : {id:req.params.id}});
+    res.json(resultado) 
+   });
 
 app.listen(3001, function(){
   console.log("O servidor esta em killing spree B)")
