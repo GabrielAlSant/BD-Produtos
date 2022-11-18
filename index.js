@@ -15,7 +15,7 @@ app.get("/", async function (req, res){
      
    });
 
-   app.get("/", async function (req, res){
+   app.get("/:id", async function (req, res){
     const resultado =  await produto.findOne({where:{id: req.params.id}});
      res.json(resultado)
      
