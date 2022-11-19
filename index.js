@@ -10,14 +10,21 @@ app.use(express.urlencoded({
 }))
 
 app.get("/", async function (req, res){
-    const resultado =  await produto.findAll();
+    try {
+      const resultado =  await produto.findAll();
      res.json(resultado)
-     
+    } catch (error) {
+      console.log(error)
+    }   
    });
 
    app.get("/:id", async function (req, res){
-    const resultado =  await produto.findOne({where:{id: req.params.id}});
+    try {
+      const resultado =  await produto.findOne({where:{id: req.params.id}});
      res.json(resultado)
+    } catch (error) {
+      console.log(error)
+    }
      
    });
 
