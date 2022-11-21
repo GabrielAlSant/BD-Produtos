@@ -4,7 +4,7 @@
   "description": "produtos",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon",
+    "test": "nodemon index.js",
     "start": "node index.js"
   },
   "author": "Gabriel Alves Dos Santos",
