@@ -39,8 +39,8 @@ app.put("/:id", function (req, res){
     res.json(resultado) 
    });
 
-   app.delete("/:id", function (req, res){
-    var resultado =  produto.destroy(req.body, {where : {id:req.params.id}});
+app.delete("/:id", async function (req, res){
+    var resultado = await produto.destroy(req.body, {where : {id:req.params.id}});
       res.json(resultado) 
      });
 
