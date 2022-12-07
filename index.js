@@ -40,7 +40,7 @@ app.put("/:id", function (req, res){
    });
 
 app.delete("/:id", async function (req, res){
-    var resultado = await produto.destroy(req.body, {where : {id:req.params.id}});
+    var resultado = await produto.destroy({where : {id:req.params.id}});
       res.json(resultado) 
      });
 
